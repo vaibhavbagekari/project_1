@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+ 
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'header.css' %}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="header.css"> -->
+    <style>
+        .text {
+            position: absolute;
+            top: 25px;
+            left: 40px;
+            opacity: 1;
+            font-size: 2em;
+            color: rgb(250, 247, 247);
+            text-shadow: 0px 2px 3px rgb(48, 46, 46);
+            animation-name: animation1;
+            animation-duration: 2s;
+            /* animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1); */
+        }
+
+        .form-button {
+            position: absolute;
+            /* padding: 6px; */
+            /* background-color: rgb(249, 93, 61); */
+            top: 150px;
+            left: 50px;
+            /* border: 1px solid red; */
+            overflow: hidden;
+            width: 70%;
+            height: 70%;
+            /* cursor: pointer; */
+            /* border-radius: 10px; */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgba(251, 20, 20, 0.999);
+            font-size: 30px;
+            animation-name: animation2;
+            animation-duration: 2s;
+            animation-timing-function: ease-in;
+        }
+
+        .inner {
+            position: absolute;
+            top: 35px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        @keyframes animation1 {
+            from {
+                /* top:-10px; */
+                opacity: 0.5;
+                left: -220px;
+            }
+
+            to {
+                top: 25px;
+                left: 40px;
+            }
+        }
+
+        @keyframes animation2 {
+            from {
+                opacity: 0.5;
+                left: -260px;
+            }
+
+            to {
+                top: 150px;
+                left: 50px;
+            }
+        }
+
+        .list-div {
+            /* border: 2px solid blue; */
+            position: absolute;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            animation-name: top-to-bottom;
+            animation-duration: 3s;
+            transition: 3s;
+        }
+
+        @keyframes top-to-bottom {
+            1% {
+                opacity: 0;
+                top: -100%;
+            }
+
+            70% {
+                opacity: 0;
+                top: -100%;
+            }
+
+            100% {
+                opacity: 1;
+                top: 0px;
+            }
+        }
+
+        .list-div2 {
+            top: 0%;
+        }
+
+
+        .slidermain {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .slidermain .colimg {
+            width: 100%;
+
+        }
+
+        .tableh {
+            /* background-color: rgb(158, 249, 249); */
+            /* border-radius: 5px; */
+            margin: 10px;
+            font-size: 1.3rem;
+        }
+
+        .form-contaner {
+            width: 90vw;
+            height: 80%;
+            box-shadow: 0px 0px 30px rgb(22, 239, 247);
+            border: 1px solid black;
+            margin: auto;
+            display: flex;
+            border-radius: 25px;
+            overflow: hidden;
+            align-items: flex-start;
+            justify-content: center;
+
+        }
+
+        .form-colname {
+            display: flex;
+            color: rgb(36, 4, 180);
+            text-shadow: 1px 2px 5px rgb(75, 40, 228);
+            justify-content: center;
+            font-size: 30px;
+            margin-top: 70px;
+        }
+
+        .media-div {
+            display: flex;
+            margin-top: 10px;
+            flex-direction: row;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .college-logo-img {
+            margin-top: 50px;
+        }
+
+        .table2 {
+            width: 45vw;
+            border-radius: 20px;
+            /* background-color: rgba(245, 72, 216, 0.681); */
+            height: 100%;
+            font-size: 1.2rem;
+            /* box-shadow: 5px 5px 9px rgb(109, 109, 109); */
+            border-spacing: 15px;
+            /* color: rgba(0, 888, 988, 0.9); */
+        }
+
+        .table3 {
+            height: 100%;
+        }
+
+        .dis-contener {
+            /* float: right; */
+            width: 45vw;
+
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(rgb(78, 227, 247), rgb(239, 20, 177));
+            height: 100%;
+
+        }
+
+        .form-input {
+            background-color: transparent;
+            width: 80%;
+            /* border: none; */
+            height: 30px;
+            box-shadow: 0px 0px 9px rgba(243, 75, 229, 0.816);
+            border-radius: 10px;
+            border-bottom: 2px solid black;
+        }
+
+        .submit {
+            width: 50%;
+            height: 1.6rem;
+            font-size: 1rem;
+            background-color: rgb(251, 123, 239);
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.558);
+            border-radius: 10px;
+            transition-duration: .7s;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            transform: scale(1.1);
+        }
+
+        .table2 input {
+            font-size: 15px;
+            /* width: 50%; */
+        }
+
+        .formdiv {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+            width: 100%;
+            height: 80vh;
+
+
+        }
+
+        select {
+            width: 80%;
+            background-color: transparent;
+            border: none;
+            border-bottom:2px solid black;
+            
+        }
+
+        .box {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: linear-gradient(rgba(220, 17, 246, 0.516), rgba(31, 141, 238, 0.671));
+        }
+
+        .subbox {
+            width: 200px;
+            border: 2px solid black;
+            /* font-weight: 4000;  */
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(17, 18, 18, 0.984);
+            color: rgb(238, 19, 19);
+            margin: 20px;
+            height: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition-duration: 0.5s;
+        }
+
+        .subbox:hover {
+            transform: scale(1.1);
+
+            /* transition-timing-function: ease-in-out; */
+
+        }
+
+        .subbox .subtext {
+            text-shadow: 2px 1px 0px rgb(0, 102, 255);
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.435);
+            width: 100%;
+            display: flex;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            justify-content: center;
+        }
+
+        .c1 {
+            background-image: url("{% static 'polytechnic.jpg' %}");
+
+        }
+
+        .c2 {
+            background-image: url("{% static 'engineering.jpg' %}");
+        }
+
+        .c3 {
+            background-image: url("{% static 'MBA.avif' %}");
+        }
+        .c4{
+            background-image: url("{% static 'pharmacy1.jpg' %}");
+        }
+        .opgroup {
+            background-color: #00000086;
+        }
+
+        .sel {
+            border-radius: 5px;
+        }
+
+        .hlist {
+            color: rgb(20, 19, 18);
+            margin-left: 30px;
+            font-size: 70%;
+        }
+
+        .col_logo_s {
+            display: none;
+        }
+
+        @media screen and (max-width:600px) {
+            .text {
+                font-size: 1.2em;
+            }
+
+            .table2 {
+                width: 100%;
+            }
+
+            .hlist {
+                font-size: 16px;
+            }
+
+            .form-button {
+                top: 90px;
+                /* font-size: 10px; */
+                left: 50px;
+                height: 50%;
+                width: 70%;
+                height: 70%;
+                font-size: 25px;
+            }
+
+            .slidermain .colimg {
+                height: 60vh;
+            }
+
+            @keyframes animation2 {
+                from {
+                    opacity: 0.5;
+                    left: -100px;
+
+                }
+
+                to {
+                    top: 90px;
+                    left: 50px;
+                }
+
+            }
+
+            .dis-contener {
+                display: none;
+            }
+
+           
+        }
+
+        .college_name {
+            text-shadow: 2px 2px 4px black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% include "header.html" %}
+    <div class="slidermain">
+
+        <img src="{% static 'college.jpg' %}" class="colimg">
+        <h2 class="text">
+            “It's not about perfect.<br>&nbsp; It's about effort.”
+        </h2>
+        <div class="form-button">Highlights
+            <div class="inner">
+                <div class="list-div">
+                    <ul class="hlist">
+                        <li>Campus spread over 18 acres of land in eco-friendly.</li>
+                        <li>Campus floor area more than 3.5 lacs sq.ft</li>
+                        <li>670 sq.ft. floor area for each laboratory </li>
+                        <li>Robotics Club </li>
+                        <li>Bus facility from all routes </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+
+    <!-- <marquee class="marquee">welcome to Navsahyadri Group Of Institute, Pune</marquee> -->
+    <div class="formdiv">
+        <div class="form-contaner">
+            <div class="table3">
+                <form action="header.html" method="POST" height="100%">
+                    <table class="table2">
+                        <center>
+                            <tr>
+                                <th>
+                                    <h2 class="tableh">
+                                        <font color="black"> &#9990; &nbsp; &nbsp; CONTACT US &nbsp; &nbsp;&#9990;
+                                        </font>
+                                    </h2>
+                                </th>
+                            </tr>
+                            <tr>
+
+                                <th><input type="text" name="name" placeholder="Name" class="form-input"></th>
+                            </tr>
+                            <tr>
+                                <th><input type="email" name="email" placeholder="Email" class="form-input"></th>
+                            </tr>
+                            <tr>
+
+                                <th><input type="text" name="number" placeholder="Contact Number" maxlength="10"
+                                        class="form-input">
+                                </th>
+                            </tr>
+
+                            <tr>
+
+                                <th>
+                                    <select class="sel" name="faculty">
+                                        <option>---select faculty---</option>
+                                        <optgroup label="Engineering" class="opgroup">
+                                            <option class="op" value="civil Engineering">1.civil Engineering</option>
+                                            <option class="op" value="Computer Engineering">2.Computer Engineering
+                                            </option>
+                                            <option class="op" value="Mechanical Engineering">3.Mechanical Engineering
+                                            </option>
+                                            <option class="op" value="Electronics and Telicomunication(E&TC)">
+                                                4.Electronics and
+                                                Telicomunication(E&TC)</option>
+                                            <option class="op" value="AI & ML Engineering">5.AI & ML Engineering
+                                            </option>
+                                        </optgroup>
+                                        <optgroup label="barnches of polytechnic" class="opgroup">
+                                            <option class="op" value="p.Machanical Engineering">1.Machanical Engineering
+                                            </option>
+                                            <option class="op" value="p.Electrical Engineering">2.Electrical Engineering
+                                            </option>
+                                            <option class="op" value="p.Civil Engineering">3.Civil Engineering</option>
+                                            <option class="op" value="p.Computer Engineering">4.Computer Engineering
+                                            </option>
+                                        <optgroup label="Courses of Pharmacy" class="opgroup">
+                                            <option class="op" value="B pharmacy">1.B pharmacy</option>
+                                            <option class="op" value="D pharmacy">2.D pharmacy</option>
+                                        </optgroup>
+                                        <optgroup label="Other Institute" class="opgroup">
+                                            <option class="op" value="MBA">1.MBA</option>
+                                            <option class="op" value="Navsahyadri Gurukul">2.Navsahyadri Gurukul
+                                            </option>
+                                            <option class="op" value="Navsahyadri Jr. college ">3.Navsahyadri Jr.
+                                                college
+                                            </option>
+                                        </optgroup>
+
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+
+                                <th><select class="sel" name="gender">
+                                        <option value="nun">---select gender ---</option>
+                                        <option value="male">male</option>
+                                        <option value="female">female</option>
+                                        <option value="female">other</option>
+                                    </select>
+                                </th>
+                                <!-- <th><input type="radio" name="gender">male &nbsp; &nbsp; &nbsp;<input type="radio" name="gender">
+                        female</th> -->
+                            </tr>
+
+                            <tr>
+                                <th><input type="submit" name="submit" value="submit" class="submit" title="submit">
+                                </th>
+                            </tr>
+                        </center>
+                    </table>
+                </form>
+            </div>
+            <div class="dis-contener">
+                <h3 class="form-colname">Welcome to Navsahyadri Group Of Institution</h3>
+                <img src="{% static 'col-logo.png' %}" alt="" class="college-logo-img">
+                <div width="100%" class="media-div">
+                    <span><img src="{% static 'facebook1.png' %}" alt="" width="41px"></span>
+                    <span><img src="{% static 'instagram1.png' %}" alt="" width="30px"></span>
+                    <span><img src="{% static 'twitter.png' %}" alt="" width="25px"></span>
+                    <span><img src="{% static 'linkedin.png' %}" alt="" width="25px"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="subbox c1">
+            <h1 class="subtext">Polytechnic</h1><br /><br />
+            <h2 class="subtext">200+</h2>
+        </div>
+        <div class="subbox c2">
+            <h1 class="subtext">Engineering</h1><br /><br />
+            <h2 class="subtext">200+</h2>
+        </div>
+        <div class="subbox c3">
+            <h1 class="subtext">MBA</h1><br /><br />
+            <h2 class="subtext">200+</h2>
+        </div>
+        <div class="subbox c4">
+            <h1 class="subtext">Pharmacy</h1><br /><br />
+            <h2 class="subtext">200+</h2>
+        </div>
+    </div>
+    {%include "footer.html"%}
+</body>
+
+
+
+
+</html>
